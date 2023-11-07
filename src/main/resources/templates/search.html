@@ -10,10 +10,15 @@
 
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
+  <!-- Found correct mapping type here (post) -->
+  <!-- Found correct terms here (searchType) -->
+  <!-- columns gets added from the SearchController -->
+  <!-- jobs gets added via the job-listing fragment from the SearchController -->
   <form th:action="@{/search/results}" method = "post">
     <h2>Search by:</h2>
 
     <p>
+
             <span th:each="column : ${columns}">
                 <input
                         type="radio"
@@ -28,6 +33,7 @@
 
     <p>
       <label for="searchTerm">Keyword:</label>
+      <!-- Found correct terms here (searchTerm)-->
       <input type="text" name="searchTerm" id="searchTerm" />
     </p>
 
@@ -36,7 +42,11 @@
 
   <hr />
 
-  <!-- TODO #4 - Loop over the search results to display all job fields. -->
+  <!-- Loop over the search results to display all job fields. -->
+    <!-- Iterate over each job in jobs. Then display text from each item using thymeleaf. -->
+    <!-- This is ultimately done by calling job-listing from the fragments.html file. -->
+    <!-- View fragments.html for a further review of what's being asked in Task 4 -->
+    <div th:replace="fragments :: job-listing"></div>
 
 </div>
 

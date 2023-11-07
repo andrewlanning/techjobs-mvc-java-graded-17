@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head}">
+  <link rel="stylesheet" href="/css/techjobs.css">
 </head>
 <body>
 
@@ -10,7 +11,10 @@
 
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-  <!-- TODO #1 - Use a loop to display job results in a table. -->
+  <!-- Iterate over each job in jobs. Then display text from each item using thymeleaf. -->
+  <!-- This is ultimately done by calling job-listing from the fragments.html file. -->
+  <!-- View fragments.html for a further review of what's being asked in Task 2 -->
+  <div th:replace="fragments :: job-listing"></div>
 
 </div>
 

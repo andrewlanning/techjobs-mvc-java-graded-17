@@ -206,6 +206,7 @@ public class JobData {
         }
     }
 
+    // builds ArrayLists for the Employer, Location, PositionType and CoreCompetency objects
     public static ArrayList<Employer> getAllEmployers() {
         loadData();
         allEmployers.sort(new NameSorter());
